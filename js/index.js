@@ -4,7 +4,7 @@
 
 const projects = ['current', 'accelskies', 'magichotel', 'overlord', 'rainbow', 'vanquest', 'lolcompare', 'samepage', 'comds'];
 const projectNames = ['Untitled Game', 'Accel Skies', 'Magic Hotel', 'Overlord (Nickname)', 'Rainbow Race', 'Vanquest', 'LoL Compare Stats', 'SamePage', 'ComDS Website'];
-const projectNums = [0, 8, 7, 6, 1, 2, 3, 4, 5];
+const projectNums = [ 8, 7, 6,0, 1, 2, 3, 4, 5];
 const projectImages = [12, 11, 8, 11, 10, 9, 3, 4, 4];
 const projectDescriptions = ["", "", "", "", "", "", "", "", "", ""];
 
