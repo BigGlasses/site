@@ -2,10 +2,10 @@
  * Created by Brandon on 2017-01-28.
  */ 
 
-const projects = ['current', 'accelskies', 'magichotel', 'overlord', 'rainbow', 'vanquest', 'lolcompare', 'samepage', 'comds'];
-const projectNames = ['Untitled Game', 'Accel Skies', 'Magic Hotel', 'Overlord (Nickname)', 'Rainbow Race', 'Vanquest', 'LoL Compare Stats', 'SamePage', 'ComDS Website'];
-const projectNums = [ 8, 7, 6,0, 1, 2, 3, 4, 5];
-const projectImages = [12, 11, 8, 11, 10, 9, 3, 4, 4];
+const projects = ['current', 'accelskies', 'magichotel', 'overlord', 'rainbow', 'vanquest', 'lolcompare', 'samepage', 'comds', "c4m"];
+const projectNames = ['Untitled Game', 'Accel Skies', 'Magic Hotel', 'Overlord (Nickname)', 'Rainbow Race', 'Vanquest', 'LoL Compare Stats', 'SamePage', 'ComDS Website', "CarFindingMachine"];
+const projectNums = [ 9, 8, 7, 6,0, 1, 2, 3, 4, 5];
+const projectImages = [12, 11, 8, 11, 10, 9, 3, 4, 4, 3];
 const projectDescriptions = ["", "", "", "", "", "", "", "", "", ""];
 
 // Current
@@ -37,6 +37,8 @@ projectDescriptions[6] = "A simple application that makes API calls based on inp
 projectDescriptions[7] = "Solo project created for a client. Educational application that asked users questions. Stored user information into a mySQL database using API endpoints.Android/iOS application created using Ionic, HTML, Javascript and XML.Back-end created using web2py, mySQL and Python.";
 //comds
 projectDescriptions[8] = "Worked in a team of 5 to design and develop a website for community members to plan events. Implemented website using bootstrap and ReactJS. Made responsive web pages, with support for mobile devices. Created API endpoints using Springboot, neo4j databases and Java.";
+//car for me
+projectDescriptions[9] = "Designed and developed a website for car buyers to find affordable cars. Created API endpoints using Springboot. Implemented website using Bootstrap 4 and jQuery. Uses a dataset of over 60k cars, and quickly finds the best cars for the user. Works on mobile devices.";
 imageSources = [];
 
 for (count = 0; count < projects.length; count++) {
