@@ -38,7 +38,7 @@ projectDescriptions[7] = "Solo project created for a client. Educational applica
 //comds
 projectDescriptions[8] = "Worked in a team of 5 to design and develop a website for community members to plan events. Implemented website using bootstrap and ReactJS. Made responsive web pages, with support for mobile devices. Created API endpoints using Springboot, neo4j databases and Java.";
 //car for me
-projectDescriptions[9] = "Designed and developed a website for car buyers to find affordable cars. Created API endpoints using Springboot. Implemented website using Bootstrap 4 and jQuery. Uses a dataset of over 60k cars, and quickly finds the best cars for the user. Works on mobile devices.";
+projectDescriptions[9] = "Designed and developed a website for car buyers to find affordable cars. Created API endpoints using Springboot. Implemented website using Bootstrap 4 and jQuery. Uses a dataset of over 60k cars, and quickly finds the best cars for the user. Works on mobile devices. https://carfinding.azurewebsites.net/";
 imageSources = [];
 
 for (count = 0; count < projects.length; count++) {
