@@ -57,10 +57,10 @@ function srcListToThumbnails(srcList) {
 }
 const listProjects = projectNums.map(projNum => React.createElement(
   'div',
-  { className: 'col-md-12', style: { borderRadius: "10px", backgroundColor: "white", marginBottom: "20px", padding: "10px" } },
+  { className: 'col-md-12', style: { borderRadius: "10px", backgroundColor: "#333", marginBottom: "20px", padding: "10px" } },
   React.createElement(
     'h2',
-    { style: { textAlign: "center" } },
+    { style: { textAlign: "center", color: "white"} },
     ' ',
     projectNames[projNum],
     ' '
@@ -72,7 +72,7 @@ const listProjects = projectNums.map(projNum => React.createElement(
   ),
   React.createElement(
     'div',
-    { className: 'scrollSideways', style: { overflowY: "hidden", overflowX: "auto", height: "200px", whiteSpace: "nowrap" } },
+    { className: 'scrollSideways', style: {  } },
     srcListToThumbnails(imageSources[projNum])
   )
 ));
@@ -81,7 +81,7 @@ class projectSection extends React.Component {
   render() {
     return React.createElement(
       'div',
-      { style: { textAlign: "center" } },
+      { style: { textAlign: "center" , color: "white"} },
       React.createElement(
         'h1',
         null,
@@ -96,6 +96,6 @@ ReactDOM.render(React.createElement(projectSection), document.getElementById('pr
 
 $(document).ready(function () {
 
-  $("html").niceScroll();
-  $(".scrollSideways").niceScroll();
+  //$("html").niceScroll();
+  //$(".scrollSideways").niceScroll();
 });
