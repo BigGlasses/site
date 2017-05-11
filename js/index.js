@@ -57,10 +57,10 @@ function srcListToThumbnails(srcList) {
 }
 const listProjects = projectNums.map(projNum => React.createElement(
   'div',
-  { className: 'col-md-12', style: { borderRadius: "10px", backgroundColor: "#333", marginBottom: "20px", padding: "10px" } },
+  { className: 'col-md-12', style: { borderRadius: "10px", backgroundColor: "#333",marginBottom: "30px", padding: "20px", paddingBottom: "40px" , paddingTop: "10px"} },
   React.createElement(
-    'h2',
-    { style: { textAlign: "center", color: "white"} },
+    'h1',
+    { style: { textAlign: "center", color: "white", lineHeight: "80px"} },
     ' ',
     projectNames[projNum],
     ' '
@@ -81,7 +81,7 @@ class projectSection extends React.Component {
   render() {
     return React.createElement(
       'div',
-      { style: { textAlign: "center" , color: "white"} },
+      { style: { textAlign: "center" , color: "white", padding: "30px" , lineHeight: "40px"} },
       React.createElement(
         'h1',
         null,
