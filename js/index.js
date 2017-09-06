@@ -9,7 +9,7 @@ const projectImages = [12, 11, 8, 11, 10, 9, 3, 4, 4, 3];
 const projectDescriptions = ["", "", "", "", "", "", "", "", "", ""];
 
 // Current
-projectDescriptions[0] = "An extension of my Overlord game, with much of the code rewritten for optimization, and support for Python 3. This one features my own art, gameplay updates and a visual novel system for delivering story. It is still in development, and is set for release summer 2017 Implemented UDP sockets to allow multiplayer. Created using Python and OpenGL.";
+projectDescriptions[0] = "An extension of my Overlord game, with much of the code rewritten for optimization, and support for Python 3. This one features my own art, gameplay updates and a visual novel system for delivering story. It is still in development, and was originally set for release summer 2017. It was scrapped, but I liked the characters and decided to use them for a future project. Implemented UDP sockets to allow multiplayer. Created using Python and OpenGL.";
 // Accel Skies
 projectDescriptions[1] = "Another Disgaea themed game. You have to survive in a map with random objectives, and are given random items to help you complete the objectives. ";
 projectDescriptions[1] += "Created for the 2015 EPIC Game Challenge of McMaster University, it came out very well. I am proud of the game's efficient use of polymorphism. ";
