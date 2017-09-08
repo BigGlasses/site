@@ -2,10 +2,10 @@
  * Created by Brandon on 2017-01-28.
  */ 
 
-const projects = ['current', 'accelskies', 'magichotel', 'overlord', 'rainbow', 'vanquest', 'lolcompare', 'samepage', 'comds', "c4m"];
-const projectNames = ['Untitled Game', 'Accel Skies', 'Magic Hotel', 'Overlord (Nickname)', 'Rainbow Race', 'Vanquest', 'LoL Compare Stats', 'SamePage', 'ComDS Website', "CarFindingMachine"];
-const projectNums = [ 9, 8, 7, 6,0, 1, 2, 3, 4, 5];
-const projectImages = [12, 11, 8, 11, 10, 9, 3, 4, 4, 3];
+const projects = ['current', 'accelskies', 'magichotel', 'overlord', 'rainbow', 'vanquest', 'lolcompare', 'samepage', 'comds', "c4m", "vanwyn"];
+const projectNames = ['Untitled Game', 'Accel Skies', 'Magic Hotel', 'Overlord (Nickname)', 'Rainbow Race', 'Vanquest', 'LoL Compare Stats', 'SamePage', 'ComDS Website', "CarFindingMachine", "VanWyn Website"];
+const projectNums = [ 10 ,9, 8, 7, 6,0, 1, 2, 3, 4, 5];
+const projectImages = [12, 11, 8, 11, 10, 9, 3, 4, 4, 3, 2];
 const projectDescriptions = ["", "", "", "", "", "", "", "", "", ""];
 
 // Current
@@ -39,6 +39,13 @@ projectDescriptions[7] = "Solo project created for a client. Educational applica
 projectDescriptions[8] = "Worked in a team of 5 to design and develop a website for community members to plan events. Implemented website using bootstrap and ReactJS. Made responsive web pages, with support for mobile devices. Created API endpoints using Springboot, neo4j databases and Java.";
 //car for me
 projectDescriptions[9] = "Designed and developed a website for car buyers to find affordable cars. Created API endpoints using Springboot. Implemented website using Bootstrap 4 and jQuery. Uses a dataset of over 60k cars, and quickly finds the best cars for the user. Works on mobile devices. https://carfinding.azurewebsites.net/";
+//vanwyn
+projectDescriptions[10] = "Designed and developed a website for as a consultant for a startup company in Hamilton. Implemented googlemaps-js for a map simulation and java spring server backend for complex math calculations. Also implemented a login and administration system with java spring and mySQL database to allow client to protect certain content/pages.";
+
+
+
+
+
 imageSources = [];
 
 for (count = 0; count < projects.length; count++) {
