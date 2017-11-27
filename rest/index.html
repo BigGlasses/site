@@ -1,0 +1,147 @@
+<html>
+<head>
+  <script src="index.js"> </script>
+  <link rel="stylesheet" href="css/tether.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/react.development.js"></script>
+  <script src="js/react-dom.development.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/tether.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <title>Rest Assured Window 2</title>
+</head>
+<body>
+    <!--
+    <h1>Window B</h1>
+    <p>Right click to see the context menu.</p>
+    <p>Log:</p>
+  -->
+  <pre id="log"></pre>
+
+  <div class="container-fluid">
+
+    <div class="row testWindow backgroundLOL">
+    <div class="col-12 border-left-0 border-right-0" style="height:15%; background: grey; border: black 2px solid">
+    <img src="icon.png" class="image" style="height:  100%"/>
+
+
+      </div>
+      <div class="col-3 border-left-0 border-top-0 restChainWindow">
+        <div class="col-12 restStubSelectTop">
+          <div class="row">
+            <div class="col-12 text-center"> <h2> RestChain </h2> </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-primary" onclick="uiCreateRestStub()">Create New Test</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-primary" onclick="runAllTests()">Run All Tests</button>
+            </div>
+          </div>
+
+        </div>
+        <div id="stubholder"> </div>
+
+          <!-- <div class="col-12 restStubSelect">
+              <div class="row">
+                  <div class="col-12">
+                      Title
+                  </div>
+                  <div class="col-6">
+                      <button type="button" class="btn btn-primary">Copy</button>
+                  </div>
+                  <div class="col-6">
+                      <button type="button" class="btn btn-danger">Delete</button>
+                  </div>
+                  <div class="col-12">
+                      l
+                  </div>
+                  <div class="col-6">
+                      Title
+                  </div>
+                  <div class="col-6 text-right">
+                      GET
+                  </div>
+              </div>
+            </div> -->
+          </div>
+          <div class="col-9 restStubExpanded">
+            <div class="row">
+              <div class="col-9">
+                <div class="form-group">
+
+                  <label for="inputRequest">Test Label</label>
+                  <input type="text" class="form-control" id="testLabelInput">
+
+                  <label for="inputRequest">REST Resource</label>
+                  <input type="text" class="form-control" id="inputRequest" placeholder="api/example/resource">
+
+
+                  <label for="inputHTTPRequest">HTTP Request</label>
+                  <div class="row">
+                    <div class="col-9">
+                      <input type="text" class="form-control" id="inputHTTPRequest" placeholder="api/example/resource?arg1=val1">
+                    </div>
+                    <div class="col-3">
+                      <select class="form-control" id="inputTypeSelect">
+                        <option value="PUT">PUT</option>
+                        <option value="GET">GET</option>
+                        <option value="POST">POST</option> 
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <div class="form-group">
+                      <label for="inputDataTextArea">Input Data</label>
+                      <textarea class="form-control" id="inputDataTextArea"  cols=50 rows=12></textarea>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <label for="inputExpectedResponseTextArea">Expected Output Data</label>
+                      <textarea class="form-control" id="inputExpectedResponseTextArea"  cols=50 rows=12></textarea>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <label for="responseTextArea">Response</label>
+                      <textarea class="form-control" id="responseTextArea"  cols=50 rows=12></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 text-center"> 
+                <div class="form-group">
+                  <button type="submit" class="btn btn-secondary testbutton" id="saveDataButton" onclick="updateCurrentRestStub()">Save Data</button>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-secondary testbutton" id="testDataButton">Load Template Data</button>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-secondary testbutton" id="testButton">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='root'></div>
+
+    </body>
+
+    <script src="code/Constants.js"></script>
+    <script src="code/IO.js"></script>
+    <script src="code/JsonComparer.js"></script>
+    <script src="code/JsonParser.js"></script>
+    <script src="code/RestStub.js"></script>
+    <script src="code/RestChain.js"></script>
+    <script src="code/Profile.js"></script>
+    <script src="code/ProfileStore.js"></script>
+    <script src="code/ReactComponents.js"></script>
+    <script src="code/RestStubEvaluator.js"></script>
+    <script src="code/RestSuite.js"></script>
+    <script src="testscript.js"></script>
+    </html>
