@@ -38,10 +38,12 @@ class RestChain {
 
   */
   moveTest(identifier, location){
-  	if (this.reststublist.indexOf(identifier) > -1){
-	  	this.removeTest(identifier);
-	  	this.reststublist.splice(location, 0, identifier);
-	}
+    	if (this.reststublist.indexOf(identifier) > -1){
+  	  	this.removeTest(identifier);
+        if (location < 0) location = 0;
+        if (location > this.reststublist.length) location = this.reststublist.length;
+  	  	this.reststublist.splice(location, 0, identifier);
+  	}
   }
 
   /*

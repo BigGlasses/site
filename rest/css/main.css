@@ -18,7 +18,6 @@ label{
 }
 
 .backgroundLOL{
-
 background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
 radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
 radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
@@ -45,6 +44,12 @@ background-repeat:repeat-x;
 .testbutton{
 	width:  100%;
 	cursor: pointer;
+}
+
+.restconsole{
+	height: 100%;
+	background: white;
+	overflow-y: auto;
 }
 
 .restStubSelect:hover{

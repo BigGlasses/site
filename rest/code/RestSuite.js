@@ -41,11 +41,13 @@ function reRenderTestSelect(){
 
 }
 
+
 function uiDeleteRestStub(identifier){
 	currentRestChain.removeTest(identifier);
 	if (currentRestStub.identifier == identifier){
 		changeCurrentRestStub(currentRestChain.reststublist[0]);
 	}
+	restLog("Deleted RestStub:" + identifier);
 	displayCurrentRestStub();
 	reRenderTestSelect();
 }
@@ -54,6 +56,7 @@ function uiCopyRestStub(identifier){
 	currentProfileStore.copyRestStub(identifier);
 	var newStubId = currentProfileStore.copyRestStub(identifier);
 	currentRestChain.addTest(newStubId);
+	restLog("Copied RestStub:" + identifier + " to new RestStub:" + newStubId);
 	changeCurrentRestStub(newStubId);
 	reRenderTestSelect();
 }
@@ -62,6 +65,7 @@ function uiCreateRestStub(){
 	console.log(currentProfileStore.allRestStubs);
 	var id = currentProfileStore.newRestStub();
 	currentRestChain.addTest(id);
+	restLog("New RestStub:" + id);
 	console.log(currentProfileStore.allRestStubs);
 	if (currentProfileStore.allRestStubs.length == 1){
 		currentRestStub = currentProfileStore.getRestStubFromID(id);
@@ -74,6 +78,7 @@ function uiCreateRestStub(){
 
 // Saves the form data to the current test
 function updateCurrentRestStub(){
+	restLog("Save data for RestStub:" + currentRestStub.identifier);
 
 	label =	$('#testLabelInput').val();
 	requestData = $('#inputDataTextArea').val();
@@ -97,9 +102,29 @@ function updateCurrentRestStub(){
 
 //Change between expanded tests.
 function changeCurrentRestStub(identifier){
-	console.log("Changing to " + identifier)
+	restLog("Switch focus to RestStub:" + identifier);
 	updateCurrentRestStub();
 	currentRestStub = currentProfileStore.getRestStubFromID(identifier);
+	displayCurrentRestStub();
+	reRenderTestSelect();
+}
+
+//Move up tests.
+function moveUpCurrentRestStub(identifier){
+	restLog("Move up RestStub:" + identifier);
+	var i = currentRestChain.reststublist.indexOf(identifier);
+	currentRestChain.moveTest(identifier, i - 1);
+	updateCurrentRestStub();
+	displayCurrentRestStub();
+	reRenderTestSelect();
+}
+
+//Move down tests.
+function moveDownCurrentRestStub(identifier){
+	restLog("Move down RestStub:" + identifier);
+	var i = currentRestChain.reststublist.indexOf(identifier);
+	currentRestChain.moveTest(identifier, i + 1);
+	updateCurrentRestStub();
 	displayCurrentRestStub();
 	reRenderTestSelect();
 }
@@ -182,6 +207,7 @@ function runNextTest(){
 		var successFunction = function(data){
 			var s = compare(test.expectedData, data);
 			test.success = s;
+			restLog("Successful Test for RestStub:" + test.identifier);
 			if (s){
 				runNextTest();
 			}
@@ -197,6 +223,7 @@ function runNextTest(){
 
 		test.ranTest = true;
 		setTimeout(function() {
+			restLog("Failed Test for RestStub:" + test.identifier);
 			runTest(test, successFunction, failureFunction);
 			}, 500)
 
@@ -210,10 +237,12 @@ function runNextTest(){
 function failTests(){
 	reRenderTestSelect();
 	testQueue = [];
-	alert("Tests failed!");
+	restLog("Tests failed!");
+	//alert("Tests failed!");
 }
 function succeedTests(){
 	reRenderTestSelect();
 	testQueue = [];
-	alert("Tests succeeded!");
+	restLog("All tests succeeded!");
+	//alert("Tests succeeded!");
 }
