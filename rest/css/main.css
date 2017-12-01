@@ -95,7 +95,6 @@ background-size:16px 16px;
 .restStubSelectSelected{
 	border-width: 3px;
 	box-shadow: 0px 0px 10px #48B;
-	transform: rotate(360deg);
 	transition-duration: 0.5s;
 }
 .restStubSelectTop{
