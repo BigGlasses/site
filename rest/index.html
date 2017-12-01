@@ -8,11 +8,15 @@
   <script src="js/react.development.js"></script>
   <script src="js/react-dom.development.js"></script>
   <script src="js/jquery-3.2.1.min.js"></script>
+  <!-- <script src="js/jquery.ajax-cross-origin.min.js"></script> -->
   <script src="js/tether.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet"
+  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
   <title>Rest Assured Window 2</title>
 </head>
-<body>
+<body class="hidden-md-down">
     <!--
     <h1>Window B</h1>
     <p>Right click to see the context menu.</p>
@@ -23,7 +27,10 @@
   <div class="container-fluid">
 
     <div class="row testWindow backgroundLOL">
-    <div class="col-12 border-left-0 border-right-0" style="height:15%; background: grey; border: black 2px solid">
+      <div class="col-12 topBar text-center">
+        <img src="icon.png" class="image">
+      </div>
+<!--     <div class="col-12 border-left-0 border-right-0" style="height:15%; background: grey; border: black 2px solid">
       <div class="row">
         <div class="col-3">
     <img src="icon.png" class="image" style="height:  100%"/>
@@ -33,21 +40,21 @@
     </div>
 
 
-      </div>
-      <div class="col-3 border-left-0 border-top-0 restChainWindow">
-        <div class="col-12 restStubSelectTop">
-          <div class="row">
-            <div class="col-12 text-center"> <h2> RestChain </h2> </div>
-            <div class="col-6">
-              <button type="button" class="btn btn-primary" onclick="uiCreateRestStub()">Create New Test</button>
-            </div>
-            <div class="col-6">
-              <button type="button" class="btn btn-primary" onclick="runAllTests()">Run All Tests</button>
-            </div>
-          </div>
-
+  </div> -->
+  <div class="col-3 border-left-0 border-top-0 restChainWindow">
+    <div class="col-12 restStubSelectTop">
+      <div class="row">
+        <div class="col-12 text-center"> <h2> RestChain </h2> </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-primary" onclick="uiCreateRestStub()">Create Test</button>
         </div>
-        <div id="stubholder"> </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-primary" onclick="runAllTests()">Run Tests</button>
+        </div>
+      </div>
+
+    </div>
+    <div id="stubholder"> </div>
 
           <!-- <div class="col-12 restStubSelect">
               <div class="row">
@@ -73,61 +80,87 @@
             </div> -->
           </div>
           <div class="col-9 restStubExpanded">
-            <div class="row">
-              <div class="col-9">
-                <div class="form-group">
+            <div class="container-fluid restStubForm">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
 
-                  <label for="inputRequest">Test Label</label>
-                  <input type="text" class="form-control" id="testLabelInput">
+                    <label for="inputRequest">RestStub Label</label>
+                    <input type="text" class="form-control" id="testLabelInput">
 
-                  <label for="inputRequest">REST Resource</label>
-                  <input type="text" class="form-control" id="inputRequest" placeholder="api/example/resource">
+                    <label for="inputRequest">REST Resource</label>
+                    <input type="text" class="form-control" id="inputRequest" placeholder="api/example/resource">
 
 
-                  <label for="inputHTTPRequest">HTTP Request</label>
+                    <label for="inputHTTPRequest">HTTP Request</label>
+                    <div class="row">
+                      <div class="col-9">
+                        <input type="text" class="form-control" id="inputHTTPRequest" placeholder="api/example/resource?arg1=val1">
+                      </div>
+                      <div class="col-3">
+                        <select class="form-control" id="inputTypeSelect">
+                          <option value="PUT">PUT</option>
+                          <option value="GET">GET</option>
+                          <option value="POST">POST</option> 
+                        </select>
+                      </div>
+                    </div>
+                  </div>
                   <div class="row">
-                    <div class="col-9">
-                      <input type="text" class="form-control" id="inputHTTPRequest" placeholder="api/example/resource?arg1=val1">
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label for="inputDataTextArea">Input Data</label>
+                        <textarea class="form-control" id="inputDataTextArea"  cols=50 rows=12></textarea>
+                      </div>
                     </div>
-                    <div class="col-3">
-                      <select class="form-control" id="inputTypeSelect">
-                        <option value="PUT">PUT</option>
-                        <option value="GET">GET</option>
-                        <option value="POST">POST</option> 
-                      </select>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label for="inputExpectedResponseTextArea">Expected Response Data</label>
+                        <textarea class="form-control" id="inputExpectedResponseTextArea"  cols=50 rows=12></textarea>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="inputDataTextArea">Input Data</label>
-                      <textarea class="form-control" id="inputDataTextArea"  cols=50 rows=12></textarea>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="inputExpectedResponseTextArea">Expected Output Data</label>
-                      <textarea class="form-control" id="inputExpectedResponseTextArea"  cols=50 rows=12></textarea>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="responseTextArea">Response</label>
-                      <textarea class="form-control" id="responseTextArea"  cols=50 rows=12></textarea>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label for="responseTextArea">Response Viewer</label>
+                        <textarea class="form-control" id="responseTextArea"  cols=50 rows=12></textarea>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-3 text-center"> 
-                <div class="form-group">
-                  <button type="submit" class="btn btn-secondary testbutton" id="saveDataButton" onclick="updateCurrentRestStub()">Save Data</button>
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-secondary testbutton" id="testDataButton">Load Template Data</button>
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-secondary testbutton" id="testButton">Submit</button>
+            </div>
+            <div class="container-fluid consolepanel">
+              <div class="col-12">
+                <div class="row">
+                  <div id="consoleholder" class= "col-8 restconsole">
+                  </div>
+                  <div class="col-4 text-center"> 
+                   <!--  <div class="form-group">
+                      <button type="submit" class="btn btn-secondary testbutton" id="saveDataButton" onclick="updateCurrentRestStub()">Save Data</button>
+                    </div> -->
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-secondary testbutton" id="testButton">Run Request</button>
+                    </div>
+                    <div class="row"> 
+
+                      <div class="col-12 text-center text-capitalize" style="color: white">
+                        Load Test Templates
+                      </div>
+
+                      <div class="col-3">
+                        <button type="submit" class="btn btn-secondary testbutton" id="testDataButton1">1</button>
+                      </div>
+                      <div class="col-3">
+                        <button type="submit" class="btn btn-secondary testbutton" id="testDataButton2">2</button>
+                      </div>
+                      <div class="col-3">
+                        <button type="submit" class="btn btn-secondary testbutton" id="testDataButton3">3</button>
+                      </div>
+                      <div class="col-3">
+                        <button type="submit" class="btn btn-secondary testbutton" id="testDataButton4">4</button>
+                      </div>
+                  </div>
+                  </div>
                 </div>
               </div>
             </div>

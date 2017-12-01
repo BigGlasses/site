@@ -6,12 +6,16 @@ function restLog(message){
 }
 
 function reRenderConsole(){
-
-	listItems = log_list.map(consoleMessage);
+	var x = log_list.slice();
+	x.reverse();
+	listItems = x.map(consoleMessage);
 	ReactDOM.render(React.createElement(
 	  'div',
 	  null,
 	  listItems
 	), document.getElementById('consoleholder'));
-
+	setTimeout(function(){
+	$('#consoleholder>div').scrollTop($('#consoleholder>div')[0].scrollHeight);
+	}, 100);
+		$('#consoleholder>div').scrollTop($('#consoleholder>div')[0].scrollHeight)
 }

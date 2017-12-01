@@ -31,7 +31,7 @@ function stubSelect(stub) {
     if (stub.success) colorClass += " restStubSelectSuccess";
     if (stub.ranTest && stub.success == false) colorClass += " restStubSelectFailure";
     var resourceShorter = stub.resource;
-    resourceShorter = resourceShorter.substring(Math.max(0, resourceShorter.length - 32), resourceShorter.length);
+    resourceShorter = resourceShorter.substring(Math.max(0, resourceShorter.length - 16), resourceShorter.length);
     return React.createElement(
         "div",
         { className: "col-12 restStubSelect" + colorClass, key: stub.identifier, onClick: changeCommand },
@@ -54,7 +54,7 @@ function stubSelect(stub) {
             ),
             React.createElement(
                 "div",
-                { className: "col-3" },
+                { className: "col-4" },
                 React.createElement(
                     "button",
                     { type: "button", className: "btn btn-danger", onClick: deleteCommand },
@@ -63,26 +63,26 @@ function stubSelect(stub) {
             ),
             React.createElement(
                 "div",
-                { className: "col-2" },
+                { className: "col-2 offset-1" },
                 React.createElement(
                     "button",
-                    { type: "button", className: "btn btn-primary", onClick: upCommand },
+                    { type: "button", className: "btn btn-info", onClick: upCommand },
                     "/\\"
                 )
             ),
             React.createElement(
                 "div",
-                { className: "col-2" },
-                React.createElement(
-                    "button",
-                    { type: "button", className: "btn btn-danger", onClick: downCommand },
-                    "\\/"
-                )
+                { className: "col-9 text-left restStubSelect-type" },
+                resourceShorter
             ),
             React.createElement(
                 "div",
-                { className: "col-6 text-left restStubSelect-type" },
-                resourceShorter
+                { className: "col-2" },
+                React.createElement(
+                    "button",
+                    { type: "button", className: "btn btn-info", onClick: downCommand },
+                    "\\/"
+                )
             ),
             React.createElement(
                 "div",
@@ -99,9 +99,19 @@ function stubSelect(stub) {
 }
 
 function consoleMessage(m) {
+    s = {};
+    if (m.toLowerCase().includes("success") || m.toLowerCase().includes("succeed")) {
+        s['color'] = "green";
+    }
+    if (m.toLowerCase().includes("data") || m.toLowerCase().includes("new")) {
+        s['color'] = "blue";
+    }
+    if (m.toLowerCase().includes("fail")) {
+        s['color'] = "red";
+    }
     return React.createElement(
         "div",
-        { className: "col-12" },
+        { className: "col-12", style: s },
         React.createElement(
             "a",
             null,
