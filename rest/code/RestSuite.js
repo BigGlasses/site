@@ -180,6 +180,11 @@ $('input').change(function() {
 }).click(function() {
     // do something
 });
+$('textarea').change(function() {
+    updateCurrentRestStub();
+}).click(function() {
+    // do something
+});
 $('select').change(function() {
     updateCurrentRestStub();
 }).click(function() {

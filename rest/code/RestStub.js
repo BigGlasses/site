@@ -4,7 +4,7 @@
 */
 class RestStub {
   constructor(data) {
-  	this.label = "Basic TestStub";
+  	this.label = "Basic RestStub";
     this.resource = "http://google.ca"
   	this.requestType = "GET";
   	this.requestData = {};
