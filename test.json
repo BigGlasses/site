@@ -1,0 +1,18 @@
+{ 
+	"books" : [
+		{
+			"title": "title 1", 
+			"author": "author 1", 
+			"ISBN": "isbn 1", 
+			"amazon_link": "https://www.amazon.ca/", 
+			"download": "https://www.google.ca/"
+		},
+		{
+			"title": "title 2", 
+			"author": "author 2", 
+			"ISBN": "isbn 2", 
+			"amazon_link": "https://www.amazon.ca/", 
+			"download": "https://www.google.ca/"
+		}
+		] 
+}
